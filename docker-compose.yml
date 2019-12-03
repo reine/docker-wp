@@ -20,7 +20,7 @@ services:
     env_file:
       - ./secret/dev.env
     ports:
-      - "3306:3306"
+      - "8890:3306"
 
 networks:
   default:
