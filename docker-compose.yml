@@ -1,0 +1,28 @@
+version: "3.1"
+services:
+
+  web:
+    image: wordpress:5.3.0-php7.3-apache
+    restart: always
+    volumes:
+      - ./wordpress:/var/www/html
+    env_file:
+      - ./secret/dev.env
+    ports:
+      - "80:80"
+      - "443:443"
+
+  db:
+    image: mariadb
+    restart: always
+    volumes:
+      - ./data:/var/lib/mysql
+    env_file:
+      - ./secret/dev.env
+    ports:
+      - "3306:3306"
+
+networks:
+  default:
+    external:
+      name: amp-wp
