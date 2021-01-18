@@ -6,7 +6,7 @@ services:
     restart: always
     volumes:
       - ./wordpress:/var/www/html
-      - ./custom.ini:$PHP_INI_DIR/conf.d/
+      - ./custom.ini:/usr/local/etc/php/conf.d/custom.ini
     env_file:
       - ./secret/dev.env
     ports:
