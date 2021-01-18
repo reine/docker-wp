@@ -47,3 +47,7 @@ If you changed the default values in the `secret/dev.env` file, use those values
 Do not use the default SQL port (3306) - it will not work when accessing the database container. Use the assigned port in the `docker-compose.yml` file. The port number can be changed as long as you know what you are doing but for the purpose of this docker base, let's keep it as it is.
 
 For security reasons, it is advisable to use SSH tunneling to access the database server for production use.
+
+## Custom Directives
+
+If your site requires specific PHP directives (e.g., increased memory size), you can manage directive overrides through the provided `custom.ini` file.
